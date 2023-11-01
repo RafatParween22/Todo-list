@@ -1,16 +1,10 @@
 import React from 'react';
 
-const TodoItem = ({ text, completed, toggle, Delete }) => {
+const DeleteButton = ({ onDeleteDone }) => {
   return (
-    <li>
-      <input type="checkbox" checked={completed} onChange={toggle} />
-      <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>
-        {text}
-      </span>
-      <button onClick={Delete}>Delete</button>
-    </li>
+    <button onClick={onDeleteDone}>Delete </button>
   );
 };
 
-export default TodoItem;
+export default DeleteButton;
 

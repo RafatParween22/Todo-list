@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DeleteButton from './Delete'; 
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -32,7 +33,7 @@ const TodoList = () => {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Add a new todo"
         />
-        <button onClick={addTodo}>Add</button>
+        <button onClick={addTodo}>Add</button> 
       </div>
       <ul>
         {todos.map((todo, index) => (
@@ -40,7 +41,7 @@ const TodoList = () => {
             {todo.completed ? <del>{todo.text}</del> : todo.text}
             <button onClick={() => toggleTodo(index)}>
               {todo.completed ? 'Undone' : 'Done'}
-            </button><button onClick={deleteDoneTodos}>Delete</button>
+            </button>  <DeleteButton onDeleteDone={deleteDoneTodos} /> 
           </li>
         ))}
       </ul>
